@@ -48,29 +48,28 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        locationAuthStatus()
+        self.locationManager(locationManager, didChangeAuthorization: .authorizedWhenInUse)
     }
     
-    func locationAuthStatus() {
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
             currentLocation = locationManager.location
             Location.sharedInstance.latitude = currentLocation.coordinate.latitude
             Location.sharedInstance.longtitude = currentLocation.coordinate.longitude
             currentWeather.downloadWeatherDetails {
-                //Download UI
                 self.downloadForecastData {
                     self.updateMainUI()
                 }
             }
         } else {
             locationManager.requestWhenInUseAuthorization()
-            locationAuthStatus()
         }
     }
+    
     func downloadForecastData(completed: @escaping DownloadComplete) {
         
         //Downloading forecast data for tableview
-
+        forecasts = []
         Alamofire.request(FORECAST_URL).responseJSON { response in
             
             let result = response.result
@@ -84,7 +83,7 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
                         for obj in data {
                             let forecast = Forecast(weatherDict: obj)
                             self.forecasts.append(forecast)
-                            print(obj)
+                           
                         }
                         self.forecasts.remove(at: 0)
                         self.tableView.reloadData()
