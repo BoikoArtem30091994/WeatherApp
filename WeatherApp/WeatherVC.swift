@@ -124,6 +124,10 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
         currentWeatherImage.image = UIImage(named: currentWeather.weatherType)
 
     }
-
+    @IBAction func mapWeatherButton(_ sender: Any) {
+        performSegue(withIdentifier: "weatherMapSegue", sender: self)
+    }
+    
+    
 }
 

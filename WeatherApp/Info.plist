@@ -46,5 +46,9 @@
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>We need your location to give you, up-to-date weather information</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>We need your location to give you, up-to-date weather information</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>We need your location to give you, up-to-date weather information</string>
 </dict>
 </plist>
