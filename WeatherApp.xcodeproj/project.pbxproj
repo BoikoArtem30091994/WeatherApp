@@ -18,6 +18,7 @@
 		5C8EFAD01F72782F00F595F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C8EFACE1F72782F00F595F2 /* Main.storyboard */; };
 		5C8EFAD31F72782F00F595F2 /* WeatherApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5C8EFAD11F72782F00F595F2 /* WeatherApp.xcdatamodeld */; };
 		5C8EFAD81F72782F00F595F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C8EFAD61F72782F00F595F2 /* LaunchScreen.storyboard */; };
+		5C9E6B341FC492B200E570B6 /* MapWeatherVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C9E6B331FC492B200E570B6 /* MapWeatherVC.storyboard */; };
 		5CBAE2E51F7E687A003BF61E /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBAE2E41F7E687A003BF61E /* Location.swift */; };
 		5CC5D9481F74362700FC7B08 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC5D9471F74362700FC7B08 /* CurrentWeather.swift */; };
 		C4B43162A95562E82356D6C0 /* Pods_WeatherApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B6CD1F9E001548F36D264D5 /* Pods_WeatherApp.framework */; };
@@ -38,6 +39,7 @@
 		5C8EFAD21F72782F00F595F2 /* WeatherApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WeatherApp.xcdatamodel; sourceTree = "<group>"; };
 		5C8EFAD71F72782F00F595F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5C8EFAD91F72782F00F595F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C9E6B331FC492B200E570B6 /* MapWeatherVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapWeatherVC.storyboard; sourceTree = "<group>"; };
 		5CBAE2E41F7E687A003BF61E /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		5CC5D9471F74362700FC7B08 /* CurrentWeather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
 		A8D491725BB135132DE44A1B /* Pods-WeatherApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherApp/Pods-WeatherApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 		5C8EFAC91F72782F00F595F2 /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				5C9E6B321FC4905600E570B6 /* XIB */,
 				5C334C521F7D81A800A7FEFB /* VIew */,
 				5CC5D9461F742F0C00FC7B08 /* Model */,
 				5CC5D9451F742F0100FC7B08 /* VC */,
@@ -96,6 +99,14 @@
 				5C334C501F7D521100A7FEFB /* Assets.xcassets */,
 			);
 			path = WeatherApp;
+			sourceTree = "<group>";
+		};
+		5C9E6B321FC4905600E570B6 /* XIB */ = {
+			isa = PBXGroup;
+			children = (
+				5C9E6B331FC492B200E570B6 /* MapWeatherVC.storyboard */,
+			);
+			name = XIB;
 			sourceTree = "<group>";
 		};
 		5CC5D9451F742F0100FC7B08 /* VC */ = {
@@ -201,6 +212,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C8EFAD81F72782F00F595F2 /* LaunchScreen.storyboard in Resources */,
+				5C9E6B341FC492B200E570B6 /* MapWeatherVC.storyboard in Resources */,
 				5C334C511F7D521100A7FEFB /* Assets.xcassets in Resources */,
 				5C8EFAD01F72782F00F595F2 /* Main.storyboard in Resources */,
 			);

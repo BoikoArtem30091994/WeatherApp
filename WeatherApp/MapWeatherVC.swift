@@ -25,6 +25,13 @@ class MapWeatherVC: UIViewController, UIGestureRecognizerDelegate {
         addDoubleTap()
     }
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
+    @IBAction func backButtonPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     @IBAction func centerMapOnUserLocationBtn(_ sender: Any) {
         if authorizationStatus == .authorizedAlways || authorizationStatus == .authorizedWhenInUse {
             centerMapOnUserLocation()
@@ -40,6 +47,8 @@ class MapWeatherVC: UIViewController, UIGestureRecognizerDelegate {
 }
 
 extension MapWeatherVC: MKMapViewDelegate {
+    
+    
     func centerMapOnUserLocation() {
         guard let coordinate = locationManager.location?.coordinate else {return}
         let coordinatRegion = MKCoordinateRegionMakeWithDistance(coordinate, regionRadius * 2.0, regionRadius * 2.0)

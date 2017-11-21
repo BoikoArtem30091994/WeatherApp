@@ -31,7 +31,7 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
@@ -42,13 +42,16 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
         tableView.dataSource = self
         
         currentWeather = CurrentWeather()
-       
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.locationManager(locationManager, didChangeAuthorization: .authorizedWhenInUse)
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
@@ -69,9 +72,8 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
     func downloadForecastData(completed: @escaping DownloadComplete) {
         
         //Downloading forecast data for tableview
-        forecasts = []
         Alamofire.request(FORECAST_URL).responseJSON { response in
-            
+            self.forecasts = []
             let result = response.result
             
             if let dict = result.value as? Dictionary<String, AnyObject> {
@@ -116,7 +118,6 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
     
     
     func updateMainUI() {
-
         dateLabel.text = currentWeather.date
         currentTempLabel.text = "\(Int(currentWeather.currentTemp))°"
         locationLabel.text = currentWeather.cityName
